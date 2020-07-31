@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Webpage Title -->
+    <title>나홀로 쇼핑몰</title>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/static/images/favicon.png">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        * {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        .wrap {
+            width: 500px;
+            margin: auto;
+        }
+
+        .img {
+            background-image: url('data:image/jpeg;base64,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');
+            background-size: cover;
+            background-position: center;
+            width: 500px;
+            height: 300px;
+        }
+
+        .info {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            margin: 20px 5px auto 5px;
+        }
+
+        h1, h5 {
+            display: inline;
+        }
+
+        .order {
+            text-align: center;
+        }
+
+        .orders {
+            margin-top: 100px;
+        }
+
+        .info-temp {
+            color: blue;
+        }
+    </style>
+
+    <script>
+        function order() {
+            alert('상담 신청이 완료되었습니다.');
+        }
+
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <div class="img"></div>
+    <div class="info">
+        <h1>벨로스터 N</h1>
+        <p>2020.07 출시 / 준중형 / 휘발유 / 1998cc / 복합 10.7km/l</p>
+    </div>
+    <div class="info">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">주문자 이름</span>
+            </div>
+            <input type="text" class="form-control" id="order-name" aria-describedby="basic-addon3">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">세부모델</label>
+            </div>
+            <select class="custom-select" id="order-count">
+                <option selected value=""> -- 세부모델을 선택하세요 --</option>
+                <option value="1">Veloster N M/T</option>
+                <option value="2">Veloster N A/T</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+               <label class="input-group-text" for="inputGroupSelect01">색상</label>
+            </div>
+            <select class="custom-select" id="order-count">
+                <option selected value=""> -- 색상을 선택하세요 --</option>
+                <option value="1">퍼포먼스 블루(SFB)</option>
+                <option value="2">초크 화이트(P6W)</option>
+                <option value="3">레이크 실버(SS7)</option>
+                <option value="4">이그나이트 플레임(MFR)</option>
+                <option value="5">슈팅 스타(T5R) - 무광컬러</option>
+                <option value="6">팬텀 블랙(MZH)</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">전화번호</span>
+            </div>
+            <input type="text" class="form-control" id="order-phone" aria-describedby="basic-addon3">
+        </div>
+        <div class="order">
+            <button onclick="order()" type="button" class="btn btn-primary">견적상담 신청하기</button>
+        </div>
+    </div>
+    <div class="orders">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">이름</th>
+                <th scope="col">세부모델</th>
+                <th scope="col">색상</th>
+                <th scope="col">전화번호</th>
+            </tr>
+            </thead>
+            <tbody id="orders-box">
+            <tr>
+                <td>김규도</td>
+                <td>Veloster N A/T</td>
+                <td>퍼포먼스 블루(SFB)</td>
+                <td>01000000000</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
